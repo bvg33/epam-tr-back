@@ -1,0 +1,37 @@
+<project name="epam_tr" default="run" xmlns:ivy="antlib:org.apache.ivy.ant">
+    <property name="lib.dir" value="lib"/>
+    <property name="build.dir" value="build"/>
+    <property name="src.dir" value="src"/>
+    <property name="web.dir" value="src/main/webapp/WEB-INF"/>
+    <path id="lib.path.id">
+        <fileset dir="${lib.dir}"/>
+    </path>
+    <path id="project.classpath">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+        <pathelement location="src"/>
+    </path>
+    <path id="run.path.id">
+        <path refid="lib.path.id"/>
+        <path location="${build.dir}"/>
+    </path>
+    <target name="resolve" description="--> retreive dependencies with ivy">
+        <ivy:retrieve/>
+    </target>
+    <target name="report" depends="resolve" description="--> generates a report of dependencies">
+        <ivy:report todir="${build.dir}"/>
+    </target>
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" classpathref="project.classpath" debug="yes" encoding="UTF-8"/>
+    </target>
+    <target name="clean-cache" description="--> clean the ivy cache">
+        <ivy:cleancache/>
+    </target>
+    <target name="make.war" depends="compile">
+        <mkdir dir="build/lib"/>
+        <war destfile="build/lib/${ant.project.name}.war" webxml="${web.dir}/web.xml">
+            <classes dir="build/classes"/>
+            <lib dir="${lib.dir}"/>
+        </war>
+    </target>
+</project>

@@ -1,0 +1,31 @@
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="hello-ivy"/>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.12.3"/>
+
+        <dependency org="org.springframework" name="spring-webmvc" rev="4.3.15.RELEASE"/>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+        <dependency org="org.hibernate" name="hibernate-entitymanager" rev="5.2.10.Final"/>
+        <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+        <dependency org="javax.persistence" name="javax.persistence-api" rev="2.2"/>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+        <dependency org="org.springframework" name="spring-orm" rev="4.3.15.RELEASE"/>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+        <dependency org="org.springframework" name="spring-jdbc" rev="4.3.15.RELEASE"/>
+        <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+        <dependency org="com.zaxxer" name="HikariCP" rev="4.0.3"/>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency org="mysql" name="mysql-connector-java" rev="8.0.17"/>
+        <dependency org="org.springframework.security" name="spring-security-core" rev="4.2.20.RELEASE" transitive="false"/>
+        <dependency org="io.jsonwebtoken" name="jjwt" rev="0.9.1"/>
+        <dependency org="org.springframework.security" name="spring-security-config" rev="4.2.20.RELEASE" transitive="false"/>
+        <dependency org="org.springframework.security" name="spring-security-web" rev="4.2.20.RELEASE" transitive="false"/>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency org="org.junit.jupiter" name="junit-jupiter-api" rev="5.4.0"/>
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+        <dependency org="org.mockito" name="mockito-junit-jupiter" rev="2.28.2"/>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+        <dependency org="org.springframework" name="spring-test" rev="4.3.15.RELEASE"/>
+    </dependencies>
+</ivy-module>
