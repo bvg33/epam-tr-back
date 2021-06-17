@@ -1,9 +1,10 @@
 package com.epam.tr.service;
 
 import com.epam.tr.dao.entities.FileEntity;
-
-import java.util.List;
+import com.epam.tr.dao.entities.FileList;
 
 public interface FileService extends Service<FileEntity> {
-    List<FileEntity> readFileByPath(String path);
+    FileList readFileByPath(String path);
+    FileList doFilter(String path,String parameter,String sortType);
+    FileList search (String path,String mask);
 }

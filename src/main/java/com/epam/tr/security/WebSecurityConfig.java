@@ -40,13 +40,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                //All
+                /*//All
                 .antMatchers(POST, "/users/**", "/auth").permitAll()
                 .antMatchers(GET,"/auth").permitAll()
                 //User
                 .antMatchers(GET, "/files/**").hasAnyRole(ADMIN,USER)
                 //Admin
-                .anyRequest().hasRole(ADMIN)
+                .anyRequest().hasRole(ADMIN)*/
+                .anyRequest().permitAll()
                 .and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }

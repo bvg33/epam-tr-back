@@ -1,4 +1,4 @@
-package com.epam.tr.service.logic;
+package com.epam.tr.service.logic.builder;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;

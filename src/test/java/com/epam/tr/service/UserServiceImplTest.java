@@ -2,8 +2,9 @@ package com.epam.tr.service;
 
 import com.epam.tr.dao.UserDaoImpl;
 import com.epam.tr.dao.entities.AppUser;
+import com.epam.tr.dao.entities.UserList;
 import com.epam.tr.exceptions.WrongUserCredentials;
-import com.epam.tr.service.logic.UserValidator;
+import com.epam.tr.service.logic.validator.UserValidator;
 import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -36,8 +37,9 @@ public class UserServiceImplTest {
     @Test
     public void testGetAllUsers() {
         when(dao.getAll()).thenReturn(users);
-        List<AppUser> actual = service.getAllUsers();
-        assertEquals(users, actual);
+        UserList actual = service.getAllUsers();
+        UserList expected = new UserList(users);
+        assertEquals(expected, actual);
     }
 
     @Test

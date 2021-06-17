@@ -1,4 +1,4 @@
-package com.epam.tr.service.logic;
+package com.epam.tr.service.logic.validator;
 
 import com.epam.tr.dao.entities.FileEntity;
 import org.springframework.stereotype.Component;

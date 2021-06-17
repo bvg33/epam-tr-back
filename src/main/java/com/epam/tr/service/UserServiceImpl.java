@@ -2,12 +2,11 @@ package com.epam.tr.service;
 
 import com.epam.tr.dao.Dao;
 import com.epam.tr.dao.entities.AppUser;
+import com.epam.tr.dao.entities.UserList;
 import com.epam.tr.exceptions.WrongUserCredentials;
-import com.epam.tr.service.logic.Validator;
+import com.epam.tr.service.logic.validator.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -48,8 +47,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<AppUser> getAllUsers() {
-        return dao.getAll();
+    public UserList getAllUsers() {
+        return new UserList(dao.getAll());
     }
 
     @Override

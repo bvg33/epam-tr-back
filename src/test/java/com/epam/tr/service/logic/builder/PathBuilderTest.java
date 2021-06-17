@@ -1,7 +1,6 @@
-package com.epam.tr.service.logic;
+package com.epam.tr.service.logic.builder;
 
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 

@@ -1,8 +1,7 @@
-package com.epam.tr.service.logic;
+package com.epam.tr.service.logic.validator;
 
 import com.epam.tr.dao.entities.AppUser;
-import com.epam.tr.dao.entities.FileEntity;
-import com.epam.tr.dao.entities.FileType;
+import com.epam.tr.service.logic.validator.UserValidator;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
